@@ -10,7 +10,8 @@ from selenium.webdriver.chrome.options import Options
 def patentExtractiion(firstName, secondName):
 
     options = Options()
-    # options.headless = True
+    options.add_argument("--headless") #making the browser invisible
+    options.add_argument('window-size=1920x1080');
     PATH = "C:\Program Files (x86)\chromedriver.exe"
     driver = webdriver.Chrome(options=options, executable_path= PATH)
 
