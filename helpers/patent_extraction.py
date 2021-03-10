@@ -16,10 +16,10 @@ def patentExtraction(firstName, secondName):
     # options.headless = True
 
     # for windows
-    PATH = "{}\driver\chromedriver.exe".format(get_base_path())
+    # PATH = "{}\driver\chromedriver.exe".format(get_base_path())
 
     # for linux
-    # PATH = "{}\driver\chromedriver".format(get_base_path())
+    PATH = "{}\driver\chromedriver".format(get_base_path())
     driver = webdriver.Chrome(options=options, executable_path=PATH)
 
     ###############################Start Scraping#################################
