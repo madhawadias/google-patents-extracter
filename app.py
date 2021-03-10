@@ -1,21 +1,9 @@
-from flask import Flask, render_template, request
-from patent_extraction import patentExtractiion
+from flask import Flask
+import os
+
 app = Flask(__name__)
 
 
-@app.route('/')
-def main():
-    return render_template('patent_search.html')
+def get_base_path():
+    return os.path.dirname(os.path.realpath(__file__))
 
-
-@app.route('/send', methods=['POST'])
-def send(sum=sum):
-    if request.method == 'POST':
-        firstName = request.form['firstName']
-        secondName = request.form['secondName']
-        result = patentExtractiion(firstName , secondName)
-        return render_template('patent_search.html', success=result)
-
-if __name__ == ' __main__':
-    app.debug = True
-    app.run()
